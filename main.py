@@ -1,6 +1,5 @@
 from flask import Flask, render_template, redirect
 import sqlite3
-from pprint import pprint
 
 # Cargamos los datos
 conexion = sqlite3.connect("web2.sqlite3")
@@ -10,7 +9,6 @@ cursor.execute("""
 SELECT * FROM productos;
 """)
 productos = [dict(producto) for producto in cursor.fetchall()]
-#print(productos)
 cursor.close()
 conexion.close()
 
